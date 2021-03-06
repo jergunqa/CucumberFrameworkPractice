@@ -1,0 +1,32 @@
+----------------------------------Class 2-----------------------------------------------
+What is a webservice?
+Webservice is a method of communication through which two machines will exchange data irrespective of their underlying architecture
+All WebServices are APis but not all APIs are websservices
+Webservices are independent of the language and operating system.
+What is HTTP?
+Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmitting hypermedia documents
+Types of API with web services:We know that APIs hosted over internet are called web services,
+now these web services must follow some standard protocol or architecture in order to be able to communicateOver the internet.
+So the standards of APIs on internet are various ranging from SOAP ,XML-RPC ,JSON-RPC, RESTSOAPï uses
+XML as a format to transfer data. Its main function is to define the structure of the messages and
+methods of communication. IN addition to that the underlying medium used is HttpBut the options of http
+available are only POST and GET calls.
+XMPL-RPCï uses a specific XML format to transfer data compared to SOAP that uses a proprietary XM
+L formatJSON-RPCï XML-RPC but instead of using XML format to transfer data it uses JSONRESTï is not
+ a protocol like the other web services, instead, it is a set of architectural principles. The REST service
+ needs to have certain characteristics, including simple interfaces, which are resources identified easily
+ within the request and manipulation of resources using the interface.
+ **********************Creating Our first Post call************************************
+ 0.BaseUrl= 3.237.189.167/syntaxapi/api1.  /createUser.php   (endpoint)2.  Body or payload{"name": "string","email":
+  "string","password": "string"}
+  3.  Headers
+  content-type = application/json
+  **********************Generating Token************************************
+  0.BaseUrl= 3.237.189.167/syntaxapi/api
+  1.  /generateToken.php   (endpoint)
+  2.  Body or payload{"email": "string","password": "string"}
+  3.  Headercontent-type=application/json
+  **********************GetAllEmployees************************************
+  0.BaseUrl= 3.237.189.167/syntaxapi/api
+  1.  /getAllEmployees.php   (endpoint)
+  2.  Headercontent-type application/jsonauthorization bearer ekjejfkjkvjkjfkjwkjfkewjflkjewf

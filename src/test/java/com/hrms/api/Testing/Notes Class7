@@ -1,0 +1,27 @@
+What is Rest Assured?
+Rest Assured is a Java library used to test APIs!
+
+What is BDD?
+BDD is a branch of Test Driven Development. BDD uses human readable description of software user requirements
+
+Scenario:
+Creating an Employee
+Given a request is prepared to create an Employee
+When a Post call is made to create that Employee
+Then the status code for creating an employee is 201
+AND the employee is created
+
+Given() you pass the request headers, query and path parameters, body, cookies
+When() When marks the promise of your scenario, e.g When you get/post/put
+Then() Your assert and matcher condition are written here
+
+Hamcrest library is what we use to perform assertions
+equalTo
+allof
+anyofhasToString
+
+creating an employee -->
+using reassured library which at the backend has all the code to make http request
+
+1. header, authorization and body --> given()
+given is

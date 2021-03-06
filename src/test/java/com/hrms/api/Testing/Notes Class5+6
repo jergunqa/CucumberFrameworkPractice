@@ -1,0 +1,38 @@
+Recap:What are stateless application?
+What is statefull application?
+Disadvantage of statefull application?
+1.  Its not horizontally scale able?
+2.  when the users increase more resources of server are usedAdvantages of stateless application?
+1.  ScaleableWhat is Oauth 2.0 framework?
+What is a base URl?
+SYntax HRMS Data BAse WOrkflow
+1.  Create A userPost request
+1.  URI-->Base URL +End Point -->3.237.189.167/syntaxapi/api/createUser.php
+2.  Body/Payload{"name": "string","email": "string","password": "string"}
+3.  Header:Content-type--> application/json
+4.  Generate a TokenPost request
+1.  URI-->Base URL +End Point -->3.237.189.167/syntaxapi/api/generateToken.php
+2.  Payload{"email": "string","password": "string"}
+3.  HEaders:Content-type-->application/json
+4.  Create AN EmployeePost1.  URI-->Base URL +End Point -->3.237.189.167/syntaxapi/api/createEmployee.php
+2.  Payload{"emp_firstname": "moazzam","emp_lastname": "sadiq","emp_middle_name": null,"emp_gender": "M","emp_birthday": "2021-02-17","emp_status": "Employee","emp_job_title": "IT Analyst"}
+3.  HEadersAUthorizationcontent-type
+--------------------------------Class 6----------------------------------------------------------
+What is Oauth 2.0 framework?
+4.  Get the employee we created
+1.  URI-->Base URL +End Point -->3.237.189.167/syntaxapi/api/php/getOneEmployee.php?employee_id={{empID}}
+2.  HeaderAUthorization
+3.  The query parameter5.Update EmployeePUT
+1.  URI=Base URL +End Point -->3.237.189.167/syntaxapi/api/php/updateEmployee.php
+2.  Payload{"employee_id": "string","emp_firstname": "string","emp_lastname": "string","emp_middle_name"
+: "string","emp_gender": "Enter M for male or F for female","emp_birthday": "2021-02-21","emp_status":
+ "string","emp_job_title": "string"}
+ 3.  HEaders:AUthorizationcontent-type
+ 6.Partially Update The employee
+ 1.  URI=Base URL +End Point -->3.237.189.167/syntaxapi/api/updatePartialEmplyeesDetails.php
+ 2.  Payload{"employee_id": "string","emp_firstname": "string","emp_lastname": "string",}
+ 3.  HEadersAUthorizationcontent-type
+ 7.Delete employee
+ 1.  URI=Base URL +End Point -->3.237.189.167/syntaxapi/api/deleteEmployee.php
+2.  HEadersAUthorizationcontent-type
+3.  quertparmeterTesting

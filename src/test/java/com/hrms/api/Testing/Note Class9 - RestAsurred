@@ -1,0 +1,131 @@
+Whats Rest Assured?
+Why is API testing needed?
+What are the main difference in API and Webservices?
+1. All Webservices are APIs but not all APIs are Webservices
+2. A webservice usually use SOAP, REST, XML-JSON where as APIs can be exposed in multiple ways
+3. Webservice always need network to operate, whereas APIs do not need network to operate
+
+What is API testing?
+API testing is to determine if the developed API meets the expectation of Functionality, reliability,performance,
+security of application.
+
+What are some common protocols used to develop APIs?
+1. HTTP
+2. SOAP
+3. Rest
+4. XML-RPC
+5. XML-JSON
+6. UDDI
+7. JMS
+
+What are important steps of API testing?
+1. SETUP --> Create headers, Requests, Authorization, Body -->Given()
+2. Execution --> Send the request to the ENDPOINT, get a response --> When()
+3. Validate --> Validate that your response is a expected --> Then()
+
+What is request Specification?
+Its an object, from a class in RestAssured.
+It contains all the request Specifications like our Headers, Authorization, Body, Query parameters
+
+What is the object Response?
+It is also an object from a class in RestAssured and it contains the response of our request sent to us by the server.
+
+What is JSONPath()?
+Json Path is query language that helps us parse the json.
+
+What is hamcrest framework?
+Hamcrest is framework that has a library of use ful matchers for matching rules.
+
+Assertions? How can we make Assertions in three different ways?
+1. Junit
+2. hamcrest
+3. RestAssured then().assertthat()
+
+What is a resource in REST?
+REST treat treats any content as a resource which can either be text file, HTML pages, Images or videos.
+REST gives access to these resources and we can modify(Add, Delete, Update etc.) these resources.
+
+How are resources identified?
+Those resources are identified by URIS/global IDs.
+
+What are the popular ways to represent a resource in REST?
+JSON,XML,Text can be used to represent a resource, however JSON is most popular.
+
+Which protocol is used by RESTFUL Webservice?
+1. HTTP
+
+What are some key characteristics of a RESTFUL webservice?
+REST is stateless, hence the server has no memory.
+REST uses POST,GET,DELETE,UPDATE HTTP methods
+
+What is messaging in RESTFUL webservices?
+RESTFUL webservice uses HTTP to communicate to client and server.
+it sends a request from client to server and gets the response, this is called messaging.
+
+What are the core components of a HTTP request?
+1. URI --> (BASE_URL + RESOURCE_URL)
+2. HEADERS --> (Content-type"json", Authorization)
+3. BODY/PAYLOAD
+
+Whats the difference between PUT and POST?
+POST --> create a new resource
+PUT --> It used to update/modifiy
+
+What is the format of a URI?
+<protocol>://<service-name>>/<resourcetype>/<resourceID>
+
+What is caching mechanism?
+caching is just a mechanism of storing data temporarily in a high performance memory.
+
+Explain what factors can be used to decide whether we need a REST or SOAP webservice?
+We can say that REST is preferred when performance, scalability, and ease of development is a requirement.
+Where as SOAP can be preferred when enhanced level of security is the concern.
+
+
+--------------------------------------------------Class9----------------------------------------------------
+Imperative vs Declaration scenarios
+
+Acceptance criteria?
+Acceptance criteria is the set of conditions and rulse that a software product must meet to be accepted by the customer.
+
+The way we write cucumber scenarios is that they should meet the acceptance criteria.
+
+Step1:
+Create a feature file --> we will write the scenarios
+
+Step2:
+Create runners class --> will be used to execute our code
+
+Step3:
+Create apiTestingFinalStep class --> implementation of test cases
+
+Step4:
+create generateTokenSteps class --> to generate the token
+
+Step5:
+Make changes in the runners
+
+Step6:
+Write down steps in feature file
+
+Step7:
+Run the runners and copy the step implementation and paste them in the respective Class
+
+Step8:
+Generate a token
+SET the base URI
+1. Given() --> headers, Body
+2. When() --> POST
+
+Step9:
+implementation of generateTokenSteps
+
+Step10:
+implementation of ApiTestingFinalStep
+
+Step11:
+create a class API constants and store the URL along with the baseURL
+
+Step12:
+replace the URL in the classes with API constants
+

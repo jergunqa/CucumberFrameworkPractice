@@ -1,0 +1,31 @@
+We don't have postman or any other software tool?
+How can we test are Apis?
+
+
+We know Java.
+ 1. we need API documentation (details how to API can be used)
+ 2. Send HTTP request to the server --> using Java
+ 3. Get the response from the server and using java parse that response and write test cases.
+
+we know Java, now we send request to our server
+1. Our server accepts HTTP request
+HTTP is a protocol
+  1. Write HTTP protocol in Java and send our request to the server.
+
+ Http client();
+ Rest assured();
+
+ RestAssured()-->
+ Developed to Test the Restful web services
+ RestAssured follows the BDD approach
+  1. Given() --> To prepare the request we use given().
+  2. When() --> What type of call you are making.
+  3. Then() --> Verify
+
+ 1. Create an Employee;
+ a. URI --> BaseURI == RestAssured.baseURI = "http://3.237.189.167/syntaxapi/api"";
+ b. Given() --> headers(authorization, content-type, body) --> returntype --> object() -->requestSpecification
+ c. When() --> calltype (Post(/createEmployee.php));-->returntype-->Response
+ We have the response of our HTTP request.
+ d. Then() -->to write our test cases
+
