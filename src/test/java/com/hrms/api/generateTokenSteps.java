@@ -1,14 +1,15 @@
-package com.hrms.api.Testing;
+package com.hrms.api;
 
 import com.hrms.utils.apiConstants;
 import io.cucumber.java.en.Given;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+
 import static io.restassured.RestAssured.given;
 
 public class generateTokenSteps {
-    String BaseURI= RestAssured.baseURI="http://3.237.189.167/syntaxapi/api";
+
     static String token;
     @Given("a JWT is generated")
 
@@ -21,5 +22,7 @@ public class generateTokenSteps {
         generateTokenResponse.prettyPrint();
 
         token="Bearer "+generateTokenResponse.jsonPath().getString("token");
+
     }
+
 }

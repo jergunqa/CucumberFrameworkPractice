@@ -1,4 +1,5 @@
-package com.hrms.api.Testing;
+package com.hrms.api;
+
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;

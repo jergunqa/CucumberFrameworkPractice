@@ -1,4 +1,3 @@
-
 Feature: Configure PIM - Optional Fields
 
   @pim

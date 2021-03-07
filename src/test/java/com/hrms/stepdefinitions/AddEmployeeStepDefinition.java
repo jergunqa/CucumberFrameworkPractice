@@ -1,5 +1,10 @@
 package com.hrms.stepdefinitions;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.junit.Assert;
 
 import com.hrms.utils.CommonMethods;
 import com.hrms.utils.Constants;
@@ -9,10 +14,6 @@ import com.hrms.utils.GlobalVariables;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-
-import java.util.List;
-import java.util.Map;
 
 public class AddEmployeeStepDefinition extends CommonMethods {
 
@@ -30,10 +31,12 @@ public class AddEmployeeStepDefinition extends CommonMethods {
     public void enter_first_and_last_name() {
         addEmployeePage.enterFirstAndLastName("Thor", "Potter");
     }
+
     @Then("click on save button")
     public void click_on_save_button() {
         addEmployeePage.clickOnSaveBtn();
     }
+
     @Then("verify employee is added successfully")
     public void verify_employee_is_added_successfully() {
         String actualProfileName = personalDetailsPage.getUserProfileName();
@@ -41,11 +44,10 @@ public class AddEmployeeStepDefinition extends CommonMethods {
     }
 
     @Then("enter first name {string}, middle name {string} and last name {string}")
-    public void enter_first_name_middle_name_and_last_name(String firstName, String middleName,
-                                                           String lastName) {
+    public void enter_first_name_middle_name_and_last_name(String firstName, String middleName, String lastName) {
         addEmployeePage.enterFirstMiddleAndLastName(firstName, middleName, lastName);
 
-        GlobalVariables.employeeData= firstName+" "+middleName+" "+lastName;
+        GlobalVariables.employeeData = firstName + " " + middleName + " " + lastName;
     }
 
     @Then("verify that {string} is added successfully")
@@ -67,10 +69,11 @@ public class AddEmployeeStepDefinition extends CommonMethods {
     }
 
     @When("add multiple employees and verify they are added successfully")
-    public void add_multiple_employees_and_verify_they_are_added_successfully(DataTable employees) throws InterruptedException {
+    public void add_multiple_employees_and_verify_they_are_added_successfully(DataTable employees)
+            throws InterruptedException {
         List<Map<String, String>> employeeNames = employees.asMaps();
 
-        for(Map<String, String> employeeName: employeeNames) {
+        for (Map<String, String> employeeName : employeeNames) {
             String firstName = employeeName.get("FirstName");
             String middleName = employeeName.get("MiddleName");
             String lastName = employeeName.get("LastName");
@@ -89,10 +92,11 @@ public class AddEmployeeStepDefinition extends CommonMethods {
     }
 
     @When("add multiple employees from excel {string} sheet and verify they are added")
-    public void add_multiple_employees_from_excel_sheet_and_verify_they_are_added(String sheetName) throws InterruptedException {
+    public void add_multiple_employees_from_excel_sheet_and_verify_they_are_added(String sheetName)
+            throws InterruptedException {
         List<Map<String, String>> excelData = ExcelUtils.excelIntoListMap(Constants.TESTDATA_FILEPATH, sheetName);
 
-        for(Map<String, String> excelEmpName: excelData) {
+        for (Map<String, String> excelEmpName : excelData) {
             String firstName = excelEmpName.get("FirstName");
             String middleName = excelEmpName.get("MiddleName");
             String lastName = excelEmpName.get("LastName");
@@ -117,9 +121,15 @@ public class AddEmployeeStepDefinition extends CommonMethods {
 
     @Then("very data from db and ui is matched")
     public void very_data_from_db_and_ui_is_matched() {
-        System.out.println(GlobalVariables.dbList);
-        System.out.println(GlobalVariables.employeeData);
-
-        //add validation step using assertion
+        String expectedEmployeeData = GlobalVariables.employeeData;
+        String actualEmployeeData = "";
+        for (Map<String, String> actualEmployeeDataMap : GlobalVariables.dbList) {
+            Set<String> keys = actualEmployeeDataMap.keySet();
+            for (String key : keys) {
+                actualEmployeeData += actualEmployeeDataMap.get(key);
+            }
+        }
+        actualEmployeeData = actualEmployeeData.trim();
+        Assert.assertEquals("Verifying Employee Data", actualEmployeeData, expectedEmployeeData);
     }
 }

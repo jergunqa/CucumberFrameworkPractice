@@ -5,9 +5,6 @@ import com.hrms.utils.Constants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -24,11 +21,8 @@ public class BaseClass {
         ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
         switch (ConfigsReader.getPropertyValue("browser").toLowerCase()) {
             case "chrome":
-                WebDriverManager.edgedriver().setup();
-                ChromeOptions chromeOptions=new ChromeOptions();
-                chromeOptions.setHeadless(true);
-
-                driver = new EdgeDriver(chromeOptions);
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();

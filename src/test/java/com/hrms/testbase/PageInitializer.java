@@ -1,5 +1,4 @@
 package com.hrms.testbase;
-
 import com.hrms.pages.*;
 import com.hrms.utils.apiCommonMethods;
 
@@ -12,6 +11,7 @@ public class PageInitializer extends BaseClass{
     public static PersonalDetailsPage personalDetailsPage;
     public static PIMConfigurationPage pimConfigurationPage;
     public static apiCommonMethods apiMethods;
+
     public static void initializePageObjects() {
         loginPage = new LoginPage();
         dashboardPage = new DashboardPage();

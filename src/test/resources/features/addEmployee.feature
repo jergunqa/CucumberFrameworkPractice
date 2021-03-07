@@ -1,4 +1,3 @@
-
 Feature: Add Employee Functionality
 
   Background:
@@ -8,7 +7,7 @@ Feature: Add Employee Functionality
     When click on PIM
     And click on add employee button
 
-  @addEmployeeWithoutLogin
+  @addEmployeeWithoutLogin @ui
   Scenario: Add employee without login details
     Then enter first and last name
     And click on save button
@@ -57,4 +56,3 @@ Feature: Add Employee Functionality
     And click on save button
     Then collect employee data from hrms database
     And very data from db and ui is matched
-
